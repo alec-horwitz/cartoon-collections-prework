@@ -23,9 +23,7 @@ def find_the_cheese(array)# code an argument here
   i = 0
   found = false
   while (i < cheese_types.length) && (found == false)
-    array.include? cheese_types[i] ? found = true : i += 1
+    array.index(cheese_types[i]) ? found = true : i += 1
   end
-  array.find do |item|
-    array.include? cheese_types[i]
-  end
+  cheese_types[i]
 end
