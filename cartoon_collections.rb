@@ -20,10 +20,12 @@ end
 def find_the_cheese(array)# code an argument here
   # the array below is here to help
   cheese_types = ["cheddar", "gouda", "camembert"]
-  i = 1
+  i = 0
   found = false
-  cheese_types.each do |cheese|
-    array.include? cheese ? found = cheese : i += 1
+  cheese_types.each_with_index do |cheese, indext|
+    if array.include? cheese
+      i = indext
+    end
   end
   array.find do |item|
     array.include? cheese_types[i]
